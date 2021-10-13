@@ -10,7 +10,7 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController textEditingController = TextEditingController();
   GoogleTranslator translator = GoogleTranslator();
   var output;
-  String dropdownValue;
+  late String dropdownValue;
 
   static const Map<String, String> lang = {
     "Hindi": "hi",
@@ -66,9 +66,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 2,
                     color: Colors.deepPurpleAccent,
                   ),
-                  onChanged: (String newValue) {
+                  onChanged: (String? newValue) {
                     setState(() {
-                      dropdownValue = newValue;
+                      dropdownValue = newValue!;
                       trans();
                     });
                   },
